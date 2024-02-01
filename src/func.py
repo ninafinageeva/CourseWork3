@@ -7,8 +7,6 @@ def open_json() -> list: # Почему функция не чистая
     with open('operations.json') as f:
         return json.load(f)
 
-#state = [dictionary["state" for dictionary in open_json()]
-#print(state)
 
 def sorting_by_executed(operation) -> list:
     """Сортировка по выполненным состояниям"""
@@ -17,6 +15,7 @@ def sorting_by_executed(operation) -> list:
         if item.get("state") == "EXECUTED":
             exe.append(item)
     return exe
+
 
 def sorting_by_five_last_string(last_string):
     """Сортировка по пяти последним операциям"""
@@ -31,8 +30,6 @@ def format_data(data):
         date_form = f'{format: %d.%m.%Y}'
         list_format.append(date_form)
     return list_format
-
-
 
 
 def output_trans(date_from) -> list:
@@ -69,10 +66,6 @@ def output_trans(date_from) -> list:
 
 
 
-
-#print(sorting_by_five_last_string())
-#print(sorting_by_executed())
-#data = data.sort()[-5:]
 
 
 
